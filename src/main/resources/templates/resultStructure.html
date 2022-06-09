@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+</head>
+<body>
+
+<div class="mb-3">
+    <h1><a th:utext="${filename}"></a></h1>
+</div>
+
+<h2>Оглавление</h2>
+
+
+    <div th:each="section: ${sectionList}">
+        <a href="resultText.html" th:href="@{'/text/'+${section.firstLineNumber}}"><pre th:text="${section.title}" /></a>
+    </div>
+
+<br><br><br>
+
+<a th:href="@{'/'}">Назад</a>
+
+</body>
+</html>
